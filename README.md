@@ -2,7 +2,7 @@
 
 Fictional biotech company website with a pipeline, trials, newsroom and a live research feed.
 
-**Live demo:** https://korvexis-therapeutics.randomthingsonlineatsk.workers.dev (once deployed)
+**Live demo:** https://korvexis-therapeutics.randomthingsonlineatsk.workers.dev
 
 > This is a fictional, educational demonstration. Do not use it for real patient data, clinical decisions or regulatory submissions.
 
