@@ -53,7 +53,7 @@ export const replaceAll = internalMutation({
       }),
     ),
   },
-  handler: async (ctx, { papers }) => {
+  handler: async (ctx, { papers }): Promise<number> => {
     // Never wipe the table with an empty result (e.g. PubMed briefly unreachable).
     if (papers.length === 0) return 0
     for (const old of await ctx.db.query("papers").collect()) await ctx.db.delete(old._id)
@@ -64,7 +64,7 @@ export const replaceAll = internalMutation({
 
 export const refresh = internalAction({
   args: {},
-  handler: async (ctx) => {
+  handler: async (ctx): Promise<number> => {
     const papers: any[] = []
     const seen = new Set<string>()
     for (const topic of TOPICS) {
@@ -93,6 +93,7 @@ export const refresh = internalAction({
       }
       await sleep(400)
     }
-    return await ctx.runMutation(internal.research.replaceAll, { papers })
+    const stored: number = await ctx.runMutation(internal.research.replaceAll, { papers })
+    return stored
   },
 })
