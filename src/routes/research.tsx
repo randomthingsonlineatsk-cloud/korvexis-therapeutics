@@ -35,7 +35,7 @@ function ResearchPage() {
           </div>
           <h1 className="mt-3 max-w-2xl font-display text-4xl font-medium tracking-tight">The literature Korvexis's team is reading.</h1>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-paper/65">
-            {papers === undefined ? 'Loading the latest papers from PubMed…' : `${list.length} recent papers, pulled live from PubMed.`}
+            {papers === undefined ? 'Loading the latest papers from PubMed…' : `${list.length} recent papers, refreshed daily from PubMed.`}
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ function ResearchPage() {
           <p className="text-xs leading-relaxed text-accent-ink/90">
             <span className="font-semibold">These are real, published papers from PubMed</span> — genuine external research in
             Korvexis's therapeutic areas (lipid nanoparticles, siRNA, mRNA delivery, nanomedicine oncology, and rare disease
-            gene therapy), fetched from PubMed when you open this page and never edited. They are not Korvexis's own research, and Korvexis
+            gene therapy), refreshed from PubMed every day and never edited. They are not Korvexis's own research, and Korvexis
             itself remains a fictional company built for this portfolio. Click through to read any paper on PubMed.
           </p>
         </div>

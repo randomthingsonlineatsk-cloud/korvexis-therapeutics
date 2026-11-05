@@ -10,6 +10,15 @@ export default defineSchema({
     message: v.string(),
     handled: v.optional(v.boolean()),
   }),
+  papers: defineTable({
+    pmid: v.string(),
+    title: v.string(),
+    authors: v.array(v.string()),
+    journal: v.string(),
+    pubDate: v.string(),
+    url: v.string(),
+    queryTopic: v.string(),
+  }).index("by_pmid", ["pmid"]),
   newsletterSubscribers: defineTable({
     email: v.string(),
   }).index("by_email", ["email"]),

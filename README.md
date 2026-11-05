@@ -9,7 +9,7 @@ Fictional biotech company website with a pipeline, trials, newsroom and a live r
 ## Features
 - Pipeline and clinical-trial pages for a fictional company and its fictional Thalorix platform
 - Newsroom
-- Research Watch: real papers fetched live from PubMed in the browser (cached for 24 hours)
+- Research Watch: real papers refreshed daily from PubMed by a Convex cron (falls back to fetching in the browser without a backend)
 - Contact form and newsletter sign-up stored in Convex (or in the browser if no backend is configured)
 
 ## Tech stack
@@ -29,7 +29,7 @@ Without `VITE_CONVEX_URL` the contact and newsletter forms save to the browser's
 - Optional build variable `VITE_CONVEX_URL` for the Convex backend.
 
 ## Backend (Convex)
-`npx convex dev --configure new`, then `npx convex deploy`. Submissions are read in the Convex dashboard. The earlier admin page, login and daily PubMed cron from the Macaly version were removed.
+`npx convex dev --configure new`, then `npx convex deploy`. Submissions are read in the Convex dashboard. A daily Convex cron refreshes the Research Watch papers (run `npx convex run research:refresh` once after deploying to fill it immediately). The earlier admin page and login from the Macaly version were removed.
 
 ## Attribution
 Created by **Khan Gulrez Shagufa Fazal Ahmed**.

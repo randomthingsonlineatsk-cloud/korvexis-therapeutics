@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { CONVEX_URL, api } from '@/lib/backend'
+import { useQuery } from 'convex/react'
 
 // ---------------------------------------------------------------------------
 // Research Watch: real papers from PubMed (NCBI's free, public E-utilities
@@ -6,9 +8,9 @@ import { useEffect, useState } from 'react'
 // therapeutic areas. Each topic is searched as an exact phrase restricted to
 // title/abstract ([tiab]) so results stay on-topic.
 //
-// This runs in the visitor's browser (NCBI allows cross-origin requests) and
-// the result is cached in localStorage for a day, so the site stays a plain
-// static page with no server job.
+// With Convex configured, a daily cron stores the papers; otherwise (or while
+// that table is empty) the visitor's browser fetches them directly and caches
+// the result in localStorage for a day.
 // ---------------------------------------------------------------------------
 
 export interface Paper {
@@ -105,8 +107,7 @@ function loadPapers(): Promise<Paper[]> {
   return inflight
 }
 
-/** undefined while loading; an array (possibly empty) once settled. */
-export function usePapers(enabled = true): Paper[] | undefined {
+function useBrowserPapers(enabled: boolean): Paper[] | undefined {
   const [papers, setPapers] = useState<Paper[] | undefined>(undefined)
   useEffect(() => {
     if (!enabled) return
@@ -116,3 +117,19 @@ export function usePapers(enabled = true): Paper[] | undefined {
   }, [enabled])
   return papers
 }
+
+// With Convex configured (VITE_CONVEX_URL is a build-time constant, so the hook
+// order never changes) papers come from the table a daily cron keeps fresh.
+// If that table is still empty, or there is no backend, fetch from PubMed in
+// the browser instead.
+function useConvexPapers(enabled: boolean): Paper[] | undefined {
+  const stored = useQuery(api.research.list, enabled ? {} : 'skip') as Paper[] | undefined
+  const fallback = useBrowserPapers(enabled && stored !== undefined && stored.length === 0)
+  if (stored === undefined) return undefined
+  return stored.length > 0 ? stored : fallback
+}
+
+/** undefined while loading; an array (possibly empty) once settled. */
+export const usePapers: (enabled?: boolean) => Paper[] | undefined = CONVEX_URL
+  ? (enabled = true) => useConvexPapers(enabled)
+  : (enabled = true) => useBrowserPapers(enabled)
