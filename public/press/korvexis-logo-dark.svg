@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <g fill="none" stroke="#0a1420" stroke-width="2.2">
+    <circle cx="26" cy="30" r="7" fill="#20c99a" fill-opacity="0.25" />
+    <circle cx="60" cy="27" r="5.5" />
+    <circle cx="34" cy="62" r="8.5" fill="#20c99a" fill-opacity="0.25" />
+    <circle cx="66" cy="60" r="6" />
+    <path d="M30.5 36 47 50M47 50l16-19M47 50l-8 11M47 50l18 9" stroke-width="1.9" stroke-linecap="round" />
+  </g>
+  <text x="96" y="60" font-family="Fraunces, Georgia, serif" font-size="36" font-weight="600" fill="#0a1420">Korvexis</text>
+  <text x="98" y="80" font-family="Public Sans, Arial, sans-serif" font-size="12" letter-spacing="2" fill="#0a1420" fill-opacity="0.55">THERAPEUTICS</text>
+</svg>

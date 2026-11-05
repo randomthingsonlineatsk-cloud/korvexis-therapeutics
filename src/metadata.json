@@ -1,0 +1,54 @@
+{
+  "default": {
+    "title": "Korvexis Therapeutics",
+    "description": "Korvexis Therapeutics is a fictional nanomedicine biotech — a portfolio demonstration site covering a drug pipeline, clinical trials, regulatory milestones, and a newsroom."
+  },
+  "/": {
+    "title": "Korvexis Therapeutics — Precision Nanomedicine",
+    "description": "Korvexis engineers Thalorix lipid-polymer nanoparticles to deliver therapies precisely where they're needed, across oncology and rare disease. A fictional company built for a design portfolio."
+  },
+  "/science": {
+    "title": "The Science — Korvexis Therapeutics",
+    "description": "How the Thalorix lipid-polymer nanoparticle platform works, from shell design to tissue-selective release, across four payload classes."
+  },
+  "/pipeline": {
+    "title": "Pipeline — Korvexis Therapeutics",
+    "description": "Korvexis's six-program Thalorix pipeline, from early discovery through Phase 2, across oncology, rare disease, and infectious disease."
+  },
+  "/trials": {
+    "title": "Clinical Trials — Korvexis Therapeutics",
+    "description": "Active and completed clinical trials for Korvexis's Thalorix programs, including phase, status, enrollment, and primary endpoints."
+  },
+  "/regulatory": {
+    "title": "Regulatory Milestones — Korvexis Therapeutics",
+    "description": "A timeline of Korvexis's regulatory milestones with FDA, EMA, and Health Canada, including IND clearances, designations, and key meetings."
+  },
+  "/newsroom": {
+    "title": "Newsroom — Korvexis Therapeutics",
+    "description": "Press releases and company announcements from Korvexis Therapeutics, covering clinical, regulatory, and corporate news."
+  },
+  "/research": {
+    "title": "Research Watch — Korvexis Therapeutics",
+    "description": "Real, published papers from PubMed in Korvexis's therapeutic areas — lipid nanoparticles, siRNA, mRNA delivery, nanomedicine oncology, and rare disease gene therapy."
+  },
+  "/leadership": {
+    "title": "Leadership & Board — Korvexis Therapeutics",
+    "description": "Korvexis's executive team and board of directors."
+  },
+  "/careers": {
+    "title": "Careers — Korvexis Therapeutics",
+    "description": "Open roles at Korvexis Therapeutics across research and development, clinical operations, regulatory affairs, and corporate functions."
+  },
+  "/investors": {
+    "title": "Investors — Korvexis Therapeutics",
+    "description": "Korvexis's funding history, pipeline highlights, and company overview for investors."
+  },
+  "/patients": {
+    "title": "Patients & Caregivers — Korvexis Therapeutics",
+    "description": "Information for patients and caregivers on Korvexis's clinical trials and rare disease programs."
+  },
+  "/contact": {
+    "title": "Contact & Media — Korvexis Therapeutics",
+    "description": "Contact Korvexis Therapeutics for media, investor, careers, or general inquiries, and download the company press kit."
+  }
+}
